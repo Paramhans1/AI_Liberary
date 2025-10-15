@@ -58,3 +58,14 @@ payment.stripe.webhook-secret=whsec_XXXXXXXXXXXXXXXXXXXX
 
 Security note: keep `payment.stripe.secretKey` and `payment.stripe.webhook-secret` out of source control. Use environment variables, a secrets manager, or your CI/CD platform's secret store.
 
+Testing & Metrics
+-----------------
+
+The project includes Micrometer metrics and a small set of integration tests that rely on Actuator being accessible during tests. To run integration tests that require actuator metrics, run Maven with the `test` profile active:
+
+```powershell
+mvn -Dspring.profiles.active=test -DskipTests=false test
+```
+
+Email delivery is implemented using an outbox pattern: the `EmailService` writes outgoing messages to the `email_outbox` table and a scheduled `OutboxSender` worker attempts delivery and records status and attempts. Configure your SMTP settings in `application.properties` for actual email delivery.
+

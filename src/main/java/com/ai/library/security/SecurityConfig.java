@@ -13,6 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.ai.library.repository.UserRepository;
+import org.springframework.core.env.Environment;
 
 
 @Configuration
@@ -20,9 +21,11 @@ import com.ai.library.repository.UserRepository;
 public class SecurityConfig {
 
     private final UserRepository userRepository;
+    private final Environment env;
 
-    public SecurityConfig(UserRepository userRepository) {
+    public SecurityConfig(UserRepository userRepository, Environment env) {
         this.userRepository = userRepository;
+        this.env = env;
     }
 
     @Bean
@@ -50,13 +53,19 @@ public class SecurityConfig {
         http.csrf().disable()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
             .exceptionHandling().authenticationEntryPoint(new AuthEntryPoint()).and()
-            .authorizeHttpRequests((authz) -> authz
+            .authorizeHttpRequests((authorize) -> {
                 // Use Ant-style matchers to avoid ambiguity when multiple servlets (H2 console) are present
-                .requestMatchers(new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/api/auth/**"),
-                                 new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/h2-console/**"),
-                                 new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/webhooks/**")).permitAll()
-                .anyRequest().authenticated()
-            )
+                authorize.requestMatchers(new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/api/auth/**"),
+                                         new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/h2-console/**"),
+                                         new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/webhooks/**")).permitAll();
+
+                // Permit actuator only during tests (test profile active)
+                if (env != null && java.util.Arrays.asList(env.getActiveProfiles()).contains("test")) {
+                    authorize.requestMatchers(new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/actuator/**")).permitAll();
+                }
+
+                authorize.anyRequest().authenticated();
+            })
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
             .headers().frameOptions().disable(); // for H2 console
 

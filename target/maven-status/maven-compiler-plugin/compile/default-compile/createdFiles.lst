@@ -2,9 +2,11 @@ com\ai\library\model\Fine.class
 com\ai\library\repository\BookRepository.class
 com\ai\library\service\PaymentService.class
 com\ai\library\repository\TransactionRepository.class
+com\ai\library\metrics\MetricsInterceptor.class
 com\ai\library\model\Role.class
 com\ai\library\service\RecommendationService$Recommendation.class
 com\ai\library\controller\PaymentWebhookController.class
+com\ai\library\metrics\MetricsConfig.class
 com\ai\library\service\FileStorageService.class
 com\ai\library\model\Payment.class
 com\ai\library\payment\PaymentResult.class
@@ -26,6 +28,7 @@ com\ai\library\controller\FineController.class
 com\ai\library\security\AuthEntryPoint.class
 com\ai\library\service\BorrowService.class
 com\ai\library\repository\UserRepository.class
+com\ai\library\metrics\WebMvcMetricsConfig.class
 com\ai\library\repository\PaymentRepository.class
 com\ai\library\dto\AuthResponse.class
 com\ai\library\controller\DiscussionController.class

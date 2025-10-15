@@ -107,6 +107,16 @@
             <artifactId>stripe-java</artifactId>
             <version>22.6.0</version>
         </dependency>
+        
+        <!-- Micrometer + Actuator for observability -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -24,6 +24,7 @@ C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\controller\AnalyticsController.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\model\Role.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\security\JwtAuthenticationFilter.java
+C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\metrics\MetricsInterceptor.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\service\BorrowService.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\controller\AdminMetricsController.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\payment\PaymentResult.java
@@ -31,12 +32,14 @@ C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\payment\StubPaymentGateway.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\model\FinePolicy.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\security\SecurityConfig.java
+C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\metrics\WebMvcMetricsConfig.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\service\BookService.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\controller\DiscussionController.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\metrics\PaymentMetrics.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\service\FileStorageService.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\dto\AuthRequest.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\ai\AiAutoConfiguration.java
+C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\metrics\MetricsConfig.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\dto\AuthResponse.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\model\User.java
 C:\Users\PARAMHANS YADAV\OneDrive\Documents\AI_Liberary\Library_Backend\src\main\java\com\ai\library\scheduler\ReminderScheduler.java
